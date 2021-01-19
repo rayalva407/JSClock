@@ -9,6 +9,7 @@ body {
   width: 100%;
   height: 100%;
   transform: translate(-3px);
+  align-items: center;
 }
 
 .clock-container {
@@ -50,4 +51,16 @@ body {
   width: 30%;
   margin: 20%;
   top: 30%;
+}
+
+.digital {
+  margin: 35%;
+  width: 36%;
+}
+
+.dotted-line {
+  border: 10px dotted blue;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
 }
