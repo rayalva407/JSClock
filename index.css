@@ -32,3 +32,22 @@ body {
   transition: 0.02s;
   transition-timing-function: cubic-bezier(0,3.64,.26,.99);
 }
+
+.sec-hand {
+  margin: 2px;
+  top: 241px;
+  height: 2px;
+  background: red;
+}
+
+.min-hand {
+  top: 45%;
+  width: 45%;
+  margin: 25px;
+}
+
+.hour-hand {
+  width: 30%;
+  margin: 20%;
+  top: 30%;
+}
