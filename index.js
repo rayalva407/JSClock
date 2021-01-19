@@ -10,15 +10,24 @@ function setDate() {
   const minutes = ('0' + now.getMinutes()).slice(-2);
   const hours = ('0' + now.getHours()).slice(-2);
 
-  const secondsDeg = ((seconds / 60) * 360);
+  const secondsDeg = ((seconds / 60) * 360) + 90;
   const minutesDeg = ((minutes / 60) * 360) + 90;
   const hoursDeg = ((hours / 12) * 360) + 90;
 
-  secondsHand.style.transform = `rotate(${secondsDeg + 90}deg)`
+  secondsHand.style.transform = `rotate(${secondsDeg}deg)`
   minutesHand.style.transform = `rotate(${minutesDeg}deg)`
   hoursHand.style.transform = `rotate(${hoursDeg}deg)`
+  
+  if (hours == 12) {
+    digital.innerHTML = `<h1>${hours}:${minutes}:${seconds} PM</h1>`
+  }
+  else if (hours > 12) {
+    digital.innerHTML = `<h1>${hours - 12}:${minutes}:${seconds} PM</h1>`
+  }
+  else {
+    digital.innerHTML = `<h1>${hours}:${minutes}:${seconds} AM</h1>`
+  }
 
-  digital.innerHTML = hours >= 12 ? `<h1>${hours - 12}:${minutes}:${seconds} PM</h1>` : `<h1>${hours}:${minutes}:${seconds} AM</h1>`
 
 };
 
