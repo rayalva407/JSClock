@@ -6,15 +6,15 @@ const digital = document.querySelector('.digital')
 
 function setDate() {
   const now = new Date();
-  const seconds = now.getSeconds();
+  const seconds = ('0' + now.getSeconds()).slice(-2);
   const minutes = ('0' + now.getMinutes()).slice(-2);
-  const hours = now.getHours();
+  const hours = ('0' + now.getHours()).slice(-2);
 
-  const secondsDeg = ((seconds / 60) * 360) + 90;
+  const secondsDeg = ((seconds / 60) * 360);
   const minutesDeg = ((minutes / 60) * 360) + 90;
   const hoursDeg = ((hours / 12) * 360) + 90;
 
-  secondsHand.style.transform = `rotate(${secondsDeg}deg)`
+  secondsHand.style.transform = `rotate(${secondsDeg + 90}deg)`
   minutesHand.style.transform = `rotate(${minutesDeg}deg)`
   hoursHand.style.transform = `rotate(${hoursDeg}deg)`
 
