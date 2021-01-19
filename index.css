@@ -1,3 +1,16 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translate(-3px);
+}
+
 .clock-container {
   width: 30rem;
   height: 30rem;
@@ -14,5 +27,8 @@
   height: 5px;
   position: absolute;
   top: 50%;
-
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: 0.02s;
+  transition-timing-function: cubic-bezier(0,3.64,.26,.99);
 }
